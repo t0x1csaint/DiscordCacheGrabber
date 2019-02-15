@@ -9,7 +9,7 @@ ECHO.
 Echo Made by Cash
 ECHO.
 ECHO ...............................................
-ECHO PRESS 1, 2, 3 or 4 to select your task, or 5s to EXIT.
+ECHO PRESS 1, 2, 3 or 4 to select your task, or 5 to EXIT.
 ECHO ...............................................
 ECHO.
 ECHO 1 - Delete Cache Folder
@@ -81,11 +81,11 @@ CLS
 ECHO.
 Echo Do you have the Delete Bat?
 ECHO.
-SET /P M=Type 1 if you have it or 2 if you do not. then press ENTER:
+SET /P M=Type 1 if you have it 2 if you do not or 3 to go back to the main menu. then press ENTER:
 IF %M%==1 GOTO YES
 IF %M%==2 GOTO NO
 PAUSE
-IF %M%==1 GOTO start
+IF %M%==3 GOTO star
 
 :NO
 start iexplore.exe "https://t0x1csaint.github.io/Delete.bat"
