@@ -1,5 +1,5 @@
 @echo off
-title Discord Cache v2.2
+title Discord Cache v2.4
 color 05
 cls
 :start
@@ -9,20 +9,22 @@ ECHO.
 Echo Made by Cash
 ECHO.
 ECHO ...............................................
-ECHO PRESS 1, 2 OR 3 to select your task, or 4 to EXIT.
+ECHO PRESS 1, 2, 3 or 4 to select your task, or 5s to EXIT.
 ECHO ...............................................
 ECHO.
 ECHO 1 - Delete Cache Folder
 ECHO 2 - Convert Files and create folder
 ECHO 3 - Open Info
-ECHO 4 - EXIT
+ECHO 4 - AutoDelete
+ECHO 5 - EXIT
 ECHO.
 
-SET /P M=Type 1, 2, 3, or 4 then press ENTER:
+SET /P M=Type 1, 2, 3, 4 or 5 then press ENTER:
 IF %M%==1 GOTO DEL
 IF %M%==2 GOTO CFCF
 IF %M%==3 GOTO INFO
-IF %M%==4 GOTO EXIT
+IF %M%==4 GOTO AutoDelete
+IF %M%==5 GOTO EXIT
 
 :DEL
 cd "%UserProfile%\AppData\Roaming\discord\Cache"
@@ -74,6 +76,34 @@ SET /P M=Type 1 to go back to Menu:
 IF %M%==1 GOTO start
 Pause>nul
 
+:AutoDelete
+CLS
+ECHO.
+Echo Do you have the Delete Bat?
+ECHO.
+SET /P M=Type 1 if you have it or 2 if you do not. then press ENTER:
+IF %M%==1 GOTO YES
+IF %M%==2 GOTO NO
+PAUSE
+IF %M%==1 GOTO start
+
+:NO
+start iexplore.exe "https://t0x1csaint.github.io/Delete.bat"
+Echo Move Delete.bat to the same folder as Discord Cache Grabber.bat!
+SET /P M=Type 1 When you've done that:
+IF %M%==1 GOTO AutoDelete
+
+:YES
+copy "Delete.bat" "C:\Users\Derek\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+Echo.
+Echo If you get the Error "The system cannot find the file specified." 
+Echo.
+ECHO You didn't move the file "Delete.bat" to the proper folder if you didn't you're all set! 
+Echo. 
+Echo It'll now run on startup.
+Echo.
+SET /P M=Type 1 to go back to Menu:
+IF %M%==1 GOTO start
 
 
 :EXIT
