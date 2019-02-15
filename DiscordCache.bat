@@ -94,7 +94,7 @@ SET /P M=Type 1 When you've done that:
 IF %M%==1 GOTO AutoDelete
 
 :YES
-copy "Delete.bat" "C:\Users\Derek\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+copy "Delete.bat" "C:\Users\%UserProfile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 Echo.
 Echo If you get the Error "The system cannot find the file specified." 
 Echo.
